@@ -1,0 +1,8 @@
+##  Project info
+cmake_minimum_required (VERSION 3.8)
+
+##  Include dirs
+include_directories(${CMAKE_SOURCE_DIR}/includes/src)
+
+## Subprojects
+add_subdirectory(webserv)
