@@ -5,3 +5,4 @@ project(shbook VERSION ${VERSION} LANGUAGES CXX)
 
 ## Subprojects
 add_subdirectory(src)
+add_subdirectory(lib)
