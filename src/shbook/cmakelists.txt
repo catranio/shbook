@@ -1,0 +1,42 @@
+##  Info
+cmake_minimum_required (VERSION 3.8)
+project(shbook LANGUAGES CXX)
+
+##  Options
+set(CPP_FILES main.cpp)
+set(CMAKE_CXX_FLAGS_DEBUG "-g")
+set(CMAKE_CXX_FLAGS_RELEASE "-O3")
+
+##  Compiling
+if((CMAKE_CXX_COMPILER_ID MATCHES "GNU") OR (CMAKE_CXX_COMPILER_ID MATCHES "Clang"))
+  add_compile_options(
+    -pedantic-errors
+    -Wall
+    -Werror
+    -Wextra
+    -Wconversion
+    -Wold-style-cast
+    -Wuninitialized
+    -Wunreachable-code
+    -Wshadow
+    -Wfloat-equal
+    -Weffc++
+    -Wmost
+  )
+endif()
+
+if(NOT CMAKE_CXX_EXTENSIONS)
+    set(CMAKE_CXX_EXTENSIONS OFF)
+endif()
+
+##  Include dirs
+include_directories(${CMAKE_SOURCE_DIR}/includes/src/shbook)
+
+##  Executable
+add_executable(${PROJECT_NAME} ${CPP_FILES})
+
+##  Target
+set_target_properties(${PROJECT_NAME} PROPERTIES CXX_STANDARD 17 CXX_EXTENSIONS OFF)
+
+##  Install
+#install(TARGETS ${PROJECT_NAME} CONFIGURATIONS Release RUNTIME DESTINATION ${CMAKE_SOURCE_DIR}/bin)
