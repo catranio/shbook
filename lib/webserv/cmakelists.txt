@@ -30,7 +30,7 @@ if(NOT CMAKE_CXX_EXTENSIONS)
 endif()
 
 ##  Include dirs
-include_directories(${CMAKE_SOURCE_DIR}/includes/src/webserv)
+include_directories(${CMAKE_SOURCE_DIR}/includes/lib/webserv)
 
 ##  Executable
 add_library(${PROJECT_NAME} STATIC ${CPP_FILES})
